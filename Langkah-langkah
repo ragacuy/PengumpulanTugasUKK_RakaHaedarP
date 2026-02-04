@@ -1,0 +1,176 @@
+Langkah-Langkah Penggunaan Aplikasi Peminjaman Alat
+
+Aplikasi Peminjaman Alat digunakan oleh tiga peran utama, yaitu Admin, Petugas, dan Peminjam. Setiap peran memiliki hak akses dan alur penggunaan yang berbeda.
+
+1. Login Pengguna
+
+Pengguna membuka aplikasi melalui browser.
+
+Pengguna memasukkan username dan password.
+
+Sistem melakukan autentikasi.
+
+Jika data valid, pengguna diarahkan ke dashboard sesuai role:
+
+Admin → Dashboard Admin
+
+Petugas → Dashboard Petugas
+
+Peminjam → Dashboard Peminjam
+
+2. Alur Penggunaan oleh Peminjam
+2.1 Melihat Daftar Alat
+
+Peminjam masuk ke menu Daftar Alat.
+
+Sistem menampilkan alat yang stoknya tersedia (> 0).
+
+Peminjam dapat melihat:
+
+Nama alat
+
+Kategori
+
+Jumlah stok
+
+2.2 Mengajukan Peminjaman Alat
+
+Peminjam memilih alat yang ingin dipinjam.
+
+Peminjam mengisi jumlah alat yang dipinjam.
+
+Peminjam menekan tombol Ajukan Peminjaman.
+
+Sistem melakukan validasi:
+
+Stok mencukupi
+
+Jumlah minimal 1
+
+Jika valid:
+
+Sistem langsung mengurangi stok alat (booking).
+
+Sistem menyimpan data peminjaman dengan status pending.
+
+Peminjam mendapat notifikasi bahwa pengajuan berhasil dan menunggu persetujuan.
+
+2.3 Melihat Status & Riwayat Peminjaman
+
+Peminjam membuka menu Peminjaman Saya / Riwayat.
+
+Sistem menampilkan daftar peminjaman beserta status:
+
+pending → menunggu persetujuan
+
+disetujui → peminjaman disetujui
+
+ditolak → peminjaman ditolak
+
+dikembalikan → alat telah dikembalikan
+
+2.4 Mengembalikan Alat
+
+Peminjam hanya dapat mengembalikan alat dengan status disetujui.
+
+Peminjam menekan tombol Kembalikan.
+
+Sistem:
+
+Mengubah status peminjaman menjadi dikembalikan.
+
+Menambahkan stok alat kembali.
+
+Menyimpan data pengembalian.
+
+Peminjam mendapat notifikasi bahwa pengembalian berhasil.
+
+3. Alur Penggunaan oleh Petugas
+3.1 Melihat Data Peminjaman
+
+Petugas membuka menu Peminjaman.
+
+Sistem menampilkan peminjaman dengan status:
+
+pending
+
+disetujui
+
+3.2 Menyetujui Peminjaman
+
+Petugas memilih peminjaman dengan status pending.
+
+Petugas menekan tombol Setujui.
+
+Sistem:
+
+Mengubah status menjadi disetujui.
+
+Mencatat petugas yang menyetujui.
+
+3.3 Menolak Peminjaman
+
+Petugas memilih peminjaman dengan status pending.
+
+Petugas menekan tombol Tolak dan mengisi catatan (opsional).
+
+Sistem:
+
+Mengubah status menjadi ditolak.
+
+Mengembalikan stok alat.
+
+Mencatat petugas yang menolak.
+
+4. Alur Penggunaan oleh Admin
+4.1 Mengelola Data Master
+
+Admin dapat:
+
+Menambah, mengubah, dan menghapus:
+
+Data alat
+
+Data kategori
+
+Data pengguna
+
+4.2 Mengelola Data Peminjaman
+
+Admin melihat seluruh data peminjaman.
+
+Admin dapat:
+
+Mengedit tanggal peminjaman
+
+Menghapus peminjaman (stok otomatis dikembalikan jika perlu)
+
+4.3 Melihat Aktivitas Sistem
+
+Admin membuka menu Log Aktivitas.
+
+Sistem menampilkan:
+
+Aktivitas peminjaman
+
+Persetujuan
+
+Penolakan
+
+Penghapusan data
+
+5. Logout
+
+Pengguna menekan tombol Logout.
+
+Sistem mengakhiri sesi.
+
+Pengguna kembali ke halaman login.
+
+Catatan Sistem
+
+Sistem menggunakan mekanisme booking stok, sehingga stok langsung dikurangi saat pengajuan peminjaman.
+
+Jika peminjaman ditolak atau dihapus, stok akan otomatis dikembalikan.
+
+Sistem mencatat seluruh aktivitas penting untuk menjaga transparansi data.
